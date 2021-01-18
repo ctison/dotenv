@@ -1,0 +1,34 @@
+linters-settings:
+linters:
+  enable:
+    - bodyclose
+    - dupl
+    - exhaustive
+    - exportloopref
+    - funlen
+    - gochecknoinits
+    # - gocognit
+    - goconst
+    # - gocritic
+    - gocyclo
+    - godot
+    # - goerr113
+    - gofmt
+    - goimports
+    - golint
+    - gomodguard
+    - goprintffuncname
+    # - gosec
+    - interfacer
+    - maligned
+    - misspell
+    - nakedret
+    # - nestif
+    - nolintlint
+    - prealloc
+    - rowserrcheck
+    - scopelint
+    - sqlclosecheck
+    - stylecheck
+    - unconvert
+    - unparam
