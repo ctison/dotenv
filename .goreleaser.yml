@@ -1,0 +1,41 @@
+before:
+  hooks:
+    - go mod download
+builds:
+  - env:
+      - GO111MODULE=on
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - darwin
+    goarch:
+      - 386
+      - amd64
+      - arm
+      - arm64
+    ignore:
+      - goos: darwin
+        goarch: 386
+      - goos: darwin
+        goarch: arm
+      - goos: darwin
+        goarch: arm64
+    ldflags:
+      - -s -w
+      - -X "main.version={{.Version}}"
+archives:
+  - format: binary
+checksum:
+  name_template: checksums.txt
+release:
+  prerelease: auto
+snapshot:
+  name_template: 0.0.0-{{.Commit}}
+changelog:
+  filters:
+    exclude:
+      - '^chore:'
+      - '^ci:'
+      - '^docs:'
+      - '^readme:'
+      - '^test:'
